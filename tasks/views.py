@@ -4,8 +4,12 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db.models import Sum
 from .models import Task, Comment, TaskWorked
-from .serializers import TaskSerializer, CommentSerializer, TaskWorkedSerializer
+from django.contrib.auth.models import User
+from .serializers import TaskSerializer, CommentSerializer, TaskWorkedSerializer, UserSerializer
 
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('id')

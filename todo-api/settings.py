@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'todo-api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'HOST': 'db',
+        'PORT': '5432',
         'NAME': 'todolist',
         'USER': 'postgres',
-        'PASSWORD':  'admin',
+        'PASSWORD':  'et3ch',
     }
 }
 

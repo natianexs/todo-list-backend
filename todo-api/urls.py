@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from tasks.views import CommentViewSet, TaskWorkedViewSet, TaskViewSet
+from tasks.views import CommentViewSet, TaskWorkedViewSet, TaskViewSet, UserViewSet
 
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet, basename='task')
 router.register(r'comments', CommentViewSet, basename='comment')
 router.register(r'tasks-worked', TaskWorkedViewSet, basename='task-worked')
+router.register(r'users', UserViewSet, basename='user')  # Aqui você registra a rota de usuários
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
